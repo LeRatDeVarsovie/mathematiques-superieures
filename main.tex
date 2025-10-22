@@ -6,6 +6,7 @@
 \renewcommand{\labelitemi}{$\ast$}
 \usepackage{stmaryrd}
 \usepackage{parskip}
+\usepackage{hyperref}
 
 \geometry{
  a4paper,
@@ -13,6 +14,14 @@
  left=20mm,
  top=20mm,
  }
+
+ \hypersetup{
+    colorlinks=true,
+    linkcolor=black
+}
+
+\renewcommand{\thesubsection}{\Roman{subsection}}
+
 \usepackage{graphicx}
 \usepackage{titling}
 \title{\textbf{Théorèmes de Sup :}}
@@ -44,6 +53,16 @@
 \begin{document}
 
 \maketitle
+
+\subsection{. \textbf{Quelques résultats d'algèbre}}
+
+\hyperlink{page.2}{Théorème de Lagrange \dotfill 2}\\
+\hyperlink{page.3}{Sous-groupes additifs de $\mathbb{Z}$ \dotfill 3}\\
+\hyperlink{page.4}{Groupe fini de cardinal premier \dotfill 4}\\
+\hyperlink{page.4}{Une pseudo-réciproque du résultat précédent \dotfill 4}\\
+
+
+\newpage
 
 \begin{tcolorbox}[colback=gray!10, colframe=black, boxrule=1.5pt, arc=0pt,
                   left=4pt, right=4pt, top=4pt, bottom=4pt,
@@ -89,5 +108,48 @@ $$\sum_{i = 1}^p \underbrace{\text{Card}(\overline{x}_i)}_{\text{Card}(H)} = \te
 Enfin :
 $$p \times \text{Card}(H) = \text{Card}(G)$$
 D'où le théorème de Lagrange. $\thinspace \square$
+
+\newpage
+
+\begin{tcolorbox}[colback=gray!10, colframe=black, boxrule=1.5pt, arc=0pt,
+                  left=4pt, right=4pt, top=4pt, bottom=4pt,
+                  leftrule=1.5pt, rightrule=0pt, toprule=0pt, bottomrule=0pt]
+ \textbf{\underline{Sous-groupes additifs de $\mathbb{Z}$} :} \\
+\\
+ blabla skibidi brainrot i'm edging
+\end{tcolorbox}
+
+\textit{Preuve :}
+
+
+
+
+\newpage
+
+\begin{tcolorbox}[colback=gray!10, colframe=black, boxrule=1.5pt, arc=0pt,
+                  left=4pt, right=4pt, top=4pt, bottom=4pt,
+                  leftrule=1.5pt, rightrule=0pt, toprule=0pt, bottomrule=0pt]
+ \textbf{\underline{Théorème} :} \\
+\\
+ Soit $(G, \cdot)$ un groupe fini d'ordre $p$ premier, alors $G$ est cyclique.
+\end{tcolorbox}
+
+\textit{Preuve :}
+
+Soit $(G,\cdot)$ un groupe fini de cardinal $p$ premier, on note $e$ sont élément neutre.\\
+On considère $x \in G$ différent de $e$ (ce qui est à priori licite car $\text{Card}(G) \geq 2$).\\
+Dans ce cas le sous-groupe engendré par $x$ (noté $\langle x \rangle$ dans tout ce document) est égal à $G$ car $\text{Card}(\langle x \rangle) \mid p$ (par le théorème de Lagrange). En effet, comme $p$ est premier, ceci ne laisse que deux possibilités :\\
+soit $\langle x \rangle = \{e\}$ ce qui est impossible, soit $\langle x \rangle = G$.\\
+On obtient donc que $x$ est un générateur de $G$, ainsi $G$ est monogène et fini donc cyclique. $\thinspace \square$
+
+\vspace{1cm}
+
+\begin{tcolorbox}[colback=gray!10, colframe=black, boxrule=1.5pt, arc=0pt,
+                  left=4pt, right=4pt, top=4pt, bottom=4pt,
+                  leftrule=1.5pt, rightrule=0pt, toprule=0pt, bottomrule=0pt]
+ \textbf{\underline{Une pseudo-réciproque du résultat précédent} :} \\
+\\
+ Soit $(G, \cdot)$ un groupe de neutre $e$ dont les seuls sous-groupes sont $\{e\}$ et $G$, alors $G$ est cyclique d'ordre un nombre premier.
+\end{tcolorbox}
 
 \end{document}
