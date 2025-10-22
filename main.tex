@@ -1,0 +1,93 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{tcolorbox}
+\usepackage{amsmath, amssymb}
+\renewcommand{\labelitemi}{$\ast$}
+\usepackage{stmaryrd}
+\usepackage{parskip}
+
+\geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+\usepackage{graphicx}
+\usepackage{titling}
+\title{\textbf{Théorèmes de Sup :}}
+\author{Loù et Henri}
+\date{2025-2026}
+\usepackage{fancyhdr}
+\fancypagestyle{plain}{% the preset of fancyhdr
+\fancyhf{} % clear all header and footer fields
+\fancyfoot[L]{\thedate}
+\fancyhead[L]{Théorèmes de Sup}
+\fancyhead[R]{\theauthor}
+}
+\makeatletter
+\def\@maketitle{%
+\newpage
+\null
+\vskip 1em%
+\begin{center}%
+\let \footnote \thanks
+ {\LARGE \@title \par}%
+\vskip 1em%
+%{\large \@date}%
+\end{center}%
+\par
+\vskip 1em}
+\makeatother
+\usepackage{lipsum}
+
+\begin{document}
+
+\maketitle
+
+\begin{tcolorbox}[colback=gray!10, colframe=black, boxrule=1.5pt, arc=0pt,
+                  left=4pt, right=4pt, top=4pt, bottom=4pt,
+                  leftrule=1.5pt, rightrule=0pt, toprule=0pt, bottomrule=0pt]
+ \textbf{\underline{Théorème de Lagrange} :} \\
+\\
+ Soit $G$ un groupe fini et $H$ un sous-groupe de $G$, alors l'ordre de $H$ divise l'ordre de $G$.
+\end{tcolorbox}
+
+\textit{Preuve :} Considérons la relation binaire $R$ de $G$ définie par :
+$$\forall (x,y) \in G^2, \thinspace xRy \iff y \in \{x \cdot h \mid h \in H \}$$
+Montrons que $R$ est une relation d'équivalence sur $G$ :\\
+\begin{itemize}
+
+\item \textbf{\underline{Réflexivité} :} Soit $x \in G$, $xRx \iff x \in \{x \cdot h \mid h \in H\}$ qui est une assertion toujours vérifiée, il suffit de prendre $h = e$ 
+(où $e$ est l'élément neutre de $G$).
+\\
+\item \textbf{\underline{Symétrie} :} Si pour $(x,y) \in G^2$, on a $xRy \iff y \in \{x \cdot h \mid h \in H \}$ alors pour tout 
+$y \in G$ il existe $h \in H$ tel que $y = x \cdot h$ donc $x = y \cdot \underbrace{h^{-1}}_{\in H}$ ($h^{-1}$ existe car $G$ est un groupe) ainsi $x \in \{y \cdot h' \mid h' \in H \}$
+donc on a bien $yRx$ d'où la symétrie de $R$.
+\\
+\item \textbf{\underline{Transitivité} :} Supposons que pour $x,y,z \in G$ on ai $xRy$ et $yRz$ alors $y \in \{x \cdot h \mid h \in H \}$ et \\
+$z \in \{y \cdot h' \mid h' \in H \}$. Alors $z \in \{x \cdot \underbrace{(h \cdot h')}_{\in H} \mid h,h' \in H \}$ c'est à dire :
+$$z \in \{x \cdot h'' \mid h'' \in H \}$$
+\end{itemize}
+Donc $xRz$ d'où la transitivité de $R$. On a donc bien montré que $R$ était une relation d'équivalence sur $G$.\\
+
+Soit $a \in G$, on cherche à déterminer :
+$$\overline{a} := \{b \in G \mid bRa\}$$
+On a $x \in \overline{a} \iff xRa \iff a \in \{x \cdot h \mid h \in H\} \iff \exists h \in H, \thinspace a = x \cdot h \iff \exists h \in H, \thinspace x = a \cdot h^{-1}$
+On a donc montré par double-inclusion que $\overline{a} = a \cdot H$.\\
+\\
+Il est connu que la famille $(\overline{x}_i)_{i \in \llbracket 1, p \rrbracket}$ 
+(où les $\overline{x}_i$ sont des classes d'équivalences pour la relation $R$ deux à deux distinctes) forme une partition de $G$ ($1 \leq p \leq \text{Card}(G)$).
+On a donc :
+$$\bigsqcup_{i = 1}^p \overline{x}_i = G$$
+Il vient alors que :
+$$\text{Card}(\bigsqcup_{i = 1}^p \overline{x}_i) = \text{Card}(G)$$
+Donc :
+$$\sum_{i = 1}^p \underbrace{\text{Card}(\overline{x}_i)}_{\text{Card}(H)} = \text{Card}(G)$$
+(Le fait que $\text{Card}(\overline{x}_i) = \text{Card}(H)$ pour tout $i \in \llbracket 1, p \rrbracket$ est assez intuitif et se justifie très bien en exhibant une bijection de $\overline{x}_i$ dans $H$ !)\\
+\\
+Enfin :
+$$p \times \text{Card}(H) = \text{Card}(G)$$
+D'où le théorème de Lagrange. $\thinspace \square$
+
+\end{document}
